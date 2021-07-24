@@ -1,0 +1,39 @@
+/* Classes that are set to input-container and input itself by default */
+.def-input-container {
+  width: clamp(5em, 50%, 40em);
+  position: relative;
+}
+.def-input-container::after {
+  content: "";
+  position: absolute;
+  top: 2em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0.05em;
+  background-color: var(--clr-def-black);
+}
+
+.def-input {
+  position: relative;
+  background-color: inherit;
+}
+.def-input,
+.def-input:focus,
+.def-input:active {
+  width: 100%;
+  outline: none;
+  border: none;
+}
+.def-input::placeholder {
+  color: var(--clr-def-black);
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+
+/* Input container from Header (Search) */
+.header-input-container {
+  width: 25em;
+  margin: 0 2em;
+}
