@@ -12,24 +12,20 @@ namespace Booking.Web.Extensions.Validators
         {
             //NotNull() will take both true and false as valid properties.
             RuleFor(record => record.Deleted)
-                .NotNull().WithMessage("({PropertyName}) is required.");
+                .NotNull().WithMessage("is required.");
 
             RuleFor(record => record.Status)
-                .IsInEnum().WithMessage("({PropertyName}) is required.");
+                .IsInEnum().WithMessage("is required.");
 
             RuleFor(record => record.CreatedDate)
-                .NotNull().WithMessage("({PropertyName}) is required.");
+                .NotNull().WithMessage("is required.");
 
             RuleFor(record => record.LastModifiedDate)
-                .NotNull().WithMessage("({PropertyName}) is required.");
-
-            RuleFor(record => record)
-                .Must(record => record.LastModifiedDate >= record.CreatedDate)
-                .WithMessage("({PropertyName}) must be more then Created Date.");
+                .NotNull().WithMessage("is required.");
 
             RuleFor(record => record.Date)
-                .NotEmpty().WithMessage("({PropertyName}) is required.")
-                .Must(date => date >= DateTime.Now).WithMessage("({PropertyName}) must be more then now");
+                .NotEmpty().WithMessage("is required.")
+                .Must(date => date >= DateTime.Now).WithMessage("must be more then now.");
         }
     }
 }

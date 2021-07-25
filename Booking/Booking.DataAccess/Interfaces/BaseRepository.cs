@@ -6,8 +6,8 @@ namespace Booking.DataAccess.Repositories
     public abstract class BaseRepository
     {
         private const string connectionString =
-            "User ID=;" +
-            "Password=;" +
+            "User ID=postgres;" +
+            "Password=vivi123;" +
             "Host=localhost;" +
             "Port=5432;" +
             "Database=monobooking;";

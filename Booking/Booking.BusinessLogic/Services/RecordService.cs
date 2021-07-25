@@ -22,7 +22,7 @@ namespace Booking.BusinessLogic.Services
             if (default(DateTime) == recordContract.CreatedDate)
                 recordContract.CreatedDate = DateTime.Now;
 
-            if (default(DateTime) == recordContract.LastModifiedDate)
+            if (recordContract.LastModifiedDate < recordContract.CreatedDate)
                 recordContract.LastModifiedDate = recordContract.CreatedDate; 
 
             Record record = recordContract.ToDataModel();
